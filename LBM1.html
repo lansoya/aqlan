@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            height: 100vh; /* Set the body height to 100% of the viewport height */
+            margin: 0; /* Remove default margin to avoid extra spacing */
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center;
+            align-items: center;
+            background-color: yellowgreen;
+            width: 50%; /* Adjust as needed */
+            height: 50%; /* Adjust as needed */
+            margin: auto;
+        }
+
+        table {
+            margin: 0 auto;
+            margin-top: 30px;
+            text-align: left; /* Reset text-align for the table content */
+        }
+
+        .btn_deco {
+            background-color: #fc0349;
+            border: none;
+            color: white;
+            text-align: center;
+            font-size: 12px;
+            font-family: sans-serif;
+            cursor: pointer;
+            margin-bottom: 3%;
+            padding: 5px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        /* Center the radio buttons */
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        h1, h2 {
+            margin: 0; /* Remove default margins for h1 and h2 */
+        }
+    </style>
+
+    <title>University Kuala Lumpur - LBM Calculator</title>
+</head>
+<body>
+    <div class="box">
+        <h1>University Kuala Lumpur</h1>
+        <h2>LBM Calculator</h2>
+
+        <form action="handle_LBM1.php" method="post">
+
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" size="50%">
+                        <span class="error">* <?php echo $nameErr;?></span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Weight (in kg): </td>
+                    <td><input type="text" name="weight" size="50%">
+                        <span class="error">* <?php echo $weightErr;?></span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Height (in meters):</td>
+                    <td><input type="text" name="height" size="50%">
+                        <span class="error">* <?php echo $heightErr;?></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="text" name="age" size="50%">
+                        <span class="error">* <?php echo $ageErr;?></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" name="gender" value="female">Female
+                        <input type="radio" name="gender" value="male">Male
+                        <span class="error">* <?php echo $genderErr;?></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" name="btn_calculate" value="Calculate" class="btn_deco">
+                        <input type="reset" name="btn_reset" value="Reset" class="btn_deco">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
